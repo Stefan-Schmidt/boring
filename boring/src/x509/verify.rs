@@ -170,6 +170,6 @@ impl X509VerifyParamRef {
     /// store_builder.param_mut().set_time(seconds_since_epoch);
     /// ```
     pub fn set_time(&mut self, unix_time: time_t) {
-        unsafe { ffi::X509_VERIFY_PARAM_set_time(self.as_ptr(), unix_time) }
+        unsafe { ffi::X509_VERIFY_PARAM_set_time(self.as_ptr(), unix_time as i64) }
     }
 }
